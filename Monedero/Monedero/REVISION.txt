@@ -1,0 +1,22 @@
+PROYECTO MONEDERO VIRTUAL - VERSION REVISADA
+
+Cambios realizados:
+- Se organizó Aplicacion.java en el package principal, siguiendo la estructura del parcial.
+- Se renombró viewcontrollers a viewController y se actualizaron imports, module-info.java y referencias FXML.
+- Se corrigió la clase principal configurada en el plugin JavaFX de Maven.
+- Se ajustó la versión de compilación Maven a Java 17, coherente con la configuración del proyecto de referencia y compatible con JavaFX 21.
+- Se agregaron tres excepciones personalizadas dentro de model:
+  ClienteDuplicadoException, SaldoInsuficienteException y PuntosInsuficientesException.
+- Se integraron esas excepciones en las reglas de negocio correspondientes.
+- Se reforzaron validaciones y encapsulamiento de Cliente.
+- Se corrigió la cancelación de transacciones programadas usando removeIf.
+- Se evitó contar dos veces una transferencia recibida al calcular el historial para detectar operaciones atípicas.
+
+Verificación:
+- Las clases de model y controller compilaron correctamente con javac --release 17.
+- No fue posible ejecutar el ciclo completo de Maven/JavaFX en este entorno porque Maven no está instalado, el wrapper requiere descargar Maven y no hubo conexión al repositorio de Maven.
+- Por lo tanto, las vistas JavaFX no se rediseñaron y su ejecución completa debe verificarse en el computador del equipo con `mvn clean javafx:run`.
+
+Importante:
+- Esta versión es una revisión inicial del código fuente, no una certificación de que todas las funcionalidades exigidas por el profesor estén terminadas.
+- Antes de entregar, se recomienda probar especialmente reversión de transferencias, canje y reversión de puntos, transacciones programadas y detección de operaciones atípicas.
